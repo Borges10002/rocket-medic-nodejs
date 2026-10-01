@@ -1,5 +1,5 @@
 class Exame {
-  contructor(id, tipo, resultado, data, local, responsavel, paciente) {
+  constructor(id, tipo, resultado, data, local, responsavel, paciente) {
     this.id = id;
     this.tipo = tipo;
     this.resultado = resultado;
@@ -9,3 +9,5 @@ class Exame {
     this.paciente = paciente;
   }
 }
+
+module.exports = Exame;
