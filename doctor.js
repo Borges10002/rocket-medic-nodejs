@@ -11,11 +11,11 @@ class Doctor {
   }
 
   addWorkingHours(day, timeSlot) {
-    this.workingHours.addWorkingHours(day, timeSlot);
+    this.workingHours.addHour(day, timeSlot);
   }
 
   removeWorkingHours(day, timeSlot) {
-    this.workingHours.removeWorkingHours(day, timeSlot);
+    this.workingHours.removeHour(day, timeSlot);
   }
 }
 

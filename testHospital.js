@@ -1,10 +1,13 @@
 const Address = require("./address");
 const Consulta = require("./consulta");
+const Diagnosis = require("./diagnosis");
+const Doctor = require("./doctor");
 const EmergencyContact = require("./emergencyContact");
 const Exame = require("./exame");
-const Doctor = require("./doctor");
+const MedicalRecord = require("./medicalRecord");
+const Medication = require("./medication");
 const Paciente = require("./paciente");
-const Prontuario = require("./prontuario");
+const Treatment = require("./treatment");
 
 const emergencyContact = new EmergencyContact("Maria Silva", "(11) 88888-8888");
 
@@ -58,12 +61,13 @@ const exame1 = new Exame(
   paciente1,
 );
 
-const prontuario1 = new Prontuario("401", paciente1);
+const prontuario1 = new MedicalRecord();
 
 paciente1.agendarConsulta(consulta1);
 paciente1.adicionarExame(exame1);
-prontuario1.adicionarDiagnostico("Hipertensão");
-prontuario1.adicionarTratamento("Redução no consumo de sal");
-prontuario1.adicionarMedicamento("Captopril");
+prontuario1.addDiagnosis(new Diagnosis("Hipertensão"));
+prontuario1.addTreatment(new Treatment("Redução no consumo de sal"));
+prontuario1.addMedication(new Medication("Captopril", "25 mg"));
+paciente1.adicionarAoHistorico(prontuario1);
 
 console.log(consulta1);
